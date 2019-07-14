@@ -1,5 +1,3 @@
-# nigelcheok
-
 ## Project setup
 ```
 npm install
