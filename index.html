@@ -7,6 +7,7 @@
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
     <title>My Webpage - Nigel Cheok</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   </head>
   <body style="margin: 0 !important; background-color: #e0e0e0;">
     <div class="navbar">
@@ -17,28 +18,30 @@
       <div class="navbar-description">
         FRONT-END ENGINEER · SINGAPORE
       </div>
+      <div class="section-divider"></div>
     </div>
-    <!-- <noscript>
-      <strong>We're sorry but my-project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div> -->
-    <!-- built files will be auto injected -->
+    <div class="hero-image"></div>
+    <div class="section-divider"></div>
+    <div class="footer">
+      © 2019 Nigel Cheok. All rights reserved.
+    </div>
   </body>
 </html>
 
 <style>
   .navbar {
-    position: fixed;
+    position: sticky;
     background-color: #ffffff;
     width: 100%;
     text-align: center;
+    top: 0;
   }
 
   .navbar-brandname {
     font-family: 'Oswald', sans-serif;
     font-size: 36px;
     letter-spacing: 1px;
-    margin-top: 20px;
+    padding-top: 20px;
   }
 
   .navbar-divider {
@@ -49,7 +52,29 @@
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
     letter-spacing: 1px;
-    margin-bottom: 20px;
     font-weight: lighter;
+    padding-bottom: 20px;
+  }
+
+  .section-divider {
+    position: relative;
+    height: 10px;
+    background-color: #bdbdbd;
+    width: 100%;
+  }
+
+  .hero-image {
+    background: url('hero.jpg') center center;
+    height: calc(100vh - 140px - 71px);
+    width: 100%;
+    background-size: cover;
+  }
+
+  .footer {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #424242;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
   }
 </style>
