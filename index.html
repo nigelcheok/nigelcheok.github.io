@@ -8,6 +8,7 @@
     <title>My Webpage - Nigel Cheok</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0f3e4b44c2.js"></script>
   </head>
   <body style="margin: 0 !important; background-color: #e0e0e0;">
     <div class="navbar">
@@ -22,8 +23,11 @@
     </div>
     <div class="hero-image">
       <div class="hero-text" onclick="buttonIsClicked()">
-        <div style="font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700;">Hello. I'm Nigel.</div>
-        Thanks for visiting my webpage!
+        <div class="fas fa-mouse-pointer" style="padding: 30px 30px 30px 10px; font-size: 3rem;"></div>
+        <div>
+          <div style="font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700;">Hello. I'm Nigel.</div>
+          Thanks for visiting my webpage!
+        </div>
       </div>
     </div>
     <div class="section-divider"></div>
@@ -81,6 +85,7 @@
   }
 
   .hero-text {
+    display: flex;
     font-family: 'Source Sans Pro', sans-serif;
     padding: 30px;
     font-size: 1.5rem;
@@ -88,7 +93,7 @@
     color: #ffffff;
     font-weight: bold;
     position: absolute;
-    top: 60%;
+    top: 50%;
     right: 0;
     background-color: rgba(66.6,66.6,66.6,.9);
     min-width: 40%;
