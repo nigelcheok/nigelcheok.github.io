@@ -10,7 +10,13 @@
   </head>
   <body style="margin: 0 !important; background-color: #e0e0e0;">
     <div class="navbar">
-      NIGEL CHEOK
+      <div class="navbar-brandname">
+        NIGEL CHEOK
+      </div>
+      <div class="navbar-divider"></div>
+      <div class="navbar-description">
+        FRONT-END ENGINEER · SINGAPORE
+      </div>
     </div>
     <!-- <noscript>
       <strong>We're sorry but my-project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
@@ -22,13 +28,28 @@
 
 <style>
   .navbar {
-    font-family: 'Oswald', sans-serif;
-    font-size: 24px;
-    height: 64px;
-    width: 100%;
     position: fixed;
     background-color: #ffffff;
-    padding: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-brandname {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
     letter-spacing: 1px;
+    margin-top: 20px;
+  }
+
+  .navbar-divider {
+    height: 10px;
+  }
+
+  .navbar-description {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: lighter;
   }
 </style>
