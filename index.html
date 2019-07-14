@@ -21,7 +21,7 @@
       <div class="section-divider"></div>
     </div>
     <div class="hero-image">
-      <div class="hero-text">
+      <div class="hero-text" onclick="buttonIsClicked()">
         <div style="font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700;">Hello. I'm Nigel.</div>
         Thanks for visiting my webpage!
       </div>
@@ -69,11 +69,15 @@
   }
 
   .hero-image {
-    background-image: url('hero.jpg');
+    background-image: url('hero_bw.jpg');
     background-position: 30% 30%;
     height: calc(100vh - 131px - 71px);
     width: 100%;
     background-size: cover;
+  }
+
+  .hero-image-swap {
+    background-image: url('hero_color.jpg');
   }
 
   .hero-text {
@@ -90,6 +94,12 @@
     min-width: 40%;
     border: 6px solid #ffffff;
     border-right: none;
+    cursor: pointer;
+  }
+
+  .hero-text:hover {
+    color: #ffd54f;
+    border-color: #ffd54f;
   }
 
   .footer {
@@ -102,3 +112,19 @@
     font-weight: lighter;
   }
 </style>
+
+<script>
+  let isImageBw = true;
+
+  function buttonIsClicked() {
+    isImageBw = !isImageBw;
+    console.log(document.getElementsByClassName('hero-image'));
+    let element = document.getElementsByClassName('hero-image');
+    if (isImageBw) {
+      element[0].classList.remove("hero-image-swap");
+    }
+    else {
+      element[0].classList.add("hero-image-swap");
+    }
+  }
+</script>
