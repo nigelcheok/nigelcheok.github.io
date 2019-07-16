@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0f3e4b44c2.js"></script>
   </head>
-  <body style="margin: 0 !important; background-color: #e0e0e0;">
+  <body style="margin: 0 !important;">
     <div class="navbar">
       <div class="navbar-brandname">
         NIGEL CHEOK
@@ -19,7 +19,7 @@
       <div class="navbar-description">
         FRONT-END ENGINEER · SINGAPORE
       </div>
-      <div class="section-divider"></div>
+      <div class="section-divider-small"></div>
     </div>
     <div class="hero-image">
       <div class="hero-text" onclick="buttonIsClicked()">
@@ -29,8 +29,51 @@
           Thanks for visiting my webpage!
         </div>
       </div>
+      <!--<div class="hero-down-arrow">-->
+         <!--<div class="fas fa-angle-down"></div>-->
+      <!--</div>-->
     </div>
-    <div class="section-divider"></div>
+    <div class="section-divider-small"></div>
+    <div class="section">
+      <div class="section-header">About</div>
+      <div class="section-description">
+        I love design and enjoy building websites that are: aesthetically pleasing, functional and purposeful.
+      </div>
+      <div class="section-description">
+        <br>
+        <img src="icons8-design-80.png" style="margin-right: 20px;">
+        <img src="icons8-code-80.png" style="margin-right: 20px;">
+        <img src="icons8-web-accessibility-80.png">
+      </div>
+    </div>
+    <div class="section-divider-small"></div>
+    <div class="section">
+      <div class="section-header">Work</div>
+      <div class="section-description">
+        Companies that I am/was working for —
+      </div>
+      <div class="section-description">
+        <br>
+        <img src="logo-structo.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+        <img src="logo-lta.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+        <img src="logo-nus.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+        <img src="logo-pub.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+        <img src="logo-satkids.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+      </div>
+    </div>
+    <div class="section-divider-small"></div>
+    <div class="section">
+      <div class="section-header">Contact</div>
+      <div class="section-description">
+        Have questions? Drop me a message.
+      </div>
+      <div class="section-description">
+        <a href="mailto:cheok.nigel@gmail.com?subject=[Nigel%27s%20Webpage]%20Questions" class="email-button">
+          <i class="fas fa-paper-plane"></i> &nbsp; Email Me
+        </a>
+      </div>
+    </div>
+    <div class="section-divider-small"></div>
     <div class="footer">
       © 2019 Nigel Cheok. All rights reserved.
     </div>
@@ -44,6 +87,7 @@
     width: 100%;
     text-align: center;
     top: 0;
+    z-index: 999;
   }
 
   .navbar-brandname {
@@ -65,23 +109,58 @@
     padding-bottom: 20px;
   }
 
+  .section {
+    color: #424242;
+    background-color: #ffffff;
+    margin: 80px 0;
+  }
+  .section.secondary {
+    /*color: #ffffff;*/
+    /*background-color: #616161;*/
+    /*background-color: #fafafa;*/
+  }
+
   .section-divider {
     position: relative;
     height: 10px;
     width: 100%;
     background-color: #bdbdbd;
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+  }
+
+  .section-divider-small {
+    height: 2px;
+    width: 100%;
+    background-color: #f5f5f5;
+  }
+
+  .section-header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .section-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5rem;
+    /*letter-spacing: 1px;*/
+    text-align: center;
+    padding-bottom: 20px;
   }
 
   .hero-image {
-    background-image: url('hero_bw.jpg');
+    background-image: url('hero_bw2.jpg');
     background-position: 30% 30%;
-    height: calc(100vh - 131px - 71px);
+    height: calc(100vh - 131px - 71px - 200px);
     width: 100%;
     background-size: cover;
   }
 
   .hero-image-swap {
-    background-image: url('hero_color.jpg');
+    background-image: url('hero_color2.jpg');
   }
 
   .hero-text {
@@ -107,6 +186,21 @@
     border-color: #ffd54f;
   }
 
+  @media only screen and (max-width: 824px) {
+    .hero-text{
+      display: none;
+    }
+  }
+
+  .hero-down-arrow {
+    position: absolute;
+    color: #ffffff;
+    font-size: 80px;
+    top: 88%;
+    left: 50%;
+    transform: scaleX(2.5);
+  }
+
   .footer {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
@@ -116,6 +210,19 @@
     background-color: #424242;
     font-weight: lighter;
   }
+
+  .email-button {
+    font-family: 'Oswald', sans-serif;
+    padding: 2px 10px;
+    border: 2px solid #424242;
+    text-decoration: none;
+    color: #424242;
+  }
+
+  .email-button:hover {
+    color: #ffd54f;
+    border-color: #ffd54f;
+  }
 </style>
 
 <script>
@@ -123,7 +230,7 @@
 
   function buttonIsClicked() {
     isImageBw = !isImageBw;
-    console.log(document.getElementsByClassName('hero-image'));
+    // console.log(document.getElementsByClassName('hero-image'));
     let element = document.getElementsByClassName('hero-image');
     if (isImageBw) {
       element[0].classList.remove("hero-image-swap");
