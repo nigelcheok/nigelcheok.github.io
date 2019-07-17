@@ -24,28 +24,30 @@
     </div>
     <img src="hero_color2.jpg" style="display: none;">
     <div class="hero-image">
-      <div class="hero-text" onclick="buttonIsClicked()">
-        <div class="fas fa-mouse-pointer" style="padding: 30px 30px 30px 10px; font-size: 3rem;"></div>
-        <div>
-          <div style="font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700;">Hello. I'm Nigel.</div>
-          Thanks for visiting my webpage!
+      <a href="#about-me">
+        <div class="hero-text" onclick="">
+          <div class="fas fa-mouse-pointer" style="padding: 30px 30px 30px 10px; font-size: 3rem;"></div>
+          <div>
+            <div style="font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700;">Hello. I'm Nigel.</div>
+            Thanks for visiting my webpage!
+          </div>
         </div>
+      </a>
+      <div class="hero-light-icon" onclick="buttonIsClicked()">
+         <div class="fas fa-lightbulb" style="margin-top: 14px;"></div>
       </div>
-      <!--<div class="hero-down-arrow">-->
-         <!--<div class="fas fa-angle-down"></div>-->
-      <!--</div>-->
     </div>
     <div class="section-divider-small"></div>
     <div class="section">
-      <div class="section-header">About Me</div>
+      <div class="section-header" id="about-me">About Me</div>
       <div class="section-description">
-        I love design and enjoy building websites that are: aesthetically pleasing, functional and purposeful.
+        I love design and enjoy building websites that are aesthetically pleasing, functional and purposeful.
       </div>
       <div class="section-description">
         <br>
-        <img src="icons8-design-80.png" style="margin-right: 20px;">
-        <img src="icons8-code-80.png" style="margin-right: 20px;">
-        <img src="icons8-web-accessibility-80.png">
+        <img src="icons8-design-80.png" height="60" style="margin-right: 20px;">
+        <img src="icons8-code-80.png" height="60">
+        <!--<img src="icons8-web-accessibility-80.png">-->
       </div>
     </div>
     <div class="section-divider-small"></div>
@@ -56,11 +58,11 @@
       </div>
       <div class="section-description">
         <br>
-        <img src="logo-pub.jpg" height="50" style="margin: 10px 30px; opacity: 0.7">
-        <img src="logo-satkids.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
-        <img src="logo-nus.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
-        <img src="logo-lta.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
-        <img src="logo-structo.jpg" height="60" style="margin: 10px 30px; opacity: 0.7">
+        <img src="logo-pub.jpg" height="40" style="margin: 10px 40px; opacity: 0.7">
+        <img src="logo-satkids.jpg" height="50" style="margin: 10px 40px; opacity: 0.7">
+        <img src="logo-nus.jpg" height="50" style="margin: 10px 40px; opacity: 0.7">
+        <img src="logo-lta.jpg" height="50" style="margin: 10px 40px; opacity: 0.7">
+        <img src="logo-structo.jpg" height="50" style="margin: 10px 40px; opacity: 0.7">
       </div>
     </div>
     <div class="section-divider-small"></div>
@@ -158,9 +160,10 @@
   }
 
   .hero-image {
+    position: relative;
     background-image: url('hero_bw2.jpg');
     background-position: 30% 30%;
-    height: calc(100vh - 131px - 71px - 200px);
+    height: calc(100vh - 131px - 71px - 100px);
     width: 100%;
     background-size: cover;
   }
@@ -198,14 +201,42 @@
     }
   }
 
-  .hero-down-arrow {
+  .hero-light-icon {
     position: absolute;
-    color: #ffffff;
-    font-size: 80px;
-    top: 88%;
+    bottom: 0;
+    color: #424242;
+    font-size: 30px;
+    /*top: 80%;*/
     left: 50%;
-    transform: scaleX(2.5);
+    transform: translate(-50%, 50%);
+    /*background-color: #9e9e9e;*/
+    background-color: #ffffff;
+    height: 60px;
+    width: 60px;
+    border: 3px solid #ffffff;
+    text-align: center;
+    border-radius: 50px;
+    /*transform: scaleX(2.5);*/
   }
+
+  .hero-light-icon:hover {
+    color: #ffd54f;
+    cursor: pointer;
+  }
+
+  .hero-light-icon.hero-light-icon-switch-on {
+    color: #ffd54f;
+  }
+
+  .hero-light-icon.hero-light-icon-switch-on:hover {
+    color: #424242;
+  }
+
+  /*@media only screen and (min-width: 824px) {*/
+    /*.hero-light-icon{*/
+      /*display: none;*/
+    /*}*/
+  /*}*/
 
   .footer {
     font-family: 'Source Sans Pro', sans-serif;
@@ -244,5 +275,63 @@
     else {
       element[0].classList.add("hero-image-swap");
     }
+
+    let lightIcon = document.getElementsByClassName('hero-light-icon');
+    if (isImageBw) {
+      lightIcon[0].classList.remove("hero-light-icon-switch-on");
+    }
+    else {
+      lightIcon[0].classList.add("hero-light-icon-switch-on");
+    }
   }
+
+
+  // Grab all the scroll class anchor elements, use whatever class you like
+  const scrollElems = document.querySelectorAll('.scroll');
+  // Now add an event listeners to those element
+  for(let i = 0; i < scrollElems.length; i++){
+    const elem = scrollElems[i];
+
+    elem.addEventListener('click',function(e) {
+      e.preventDefault();
+
+      // 1. Get the element id to which you want to scroll
+      const scrollElemId = e.target.href.split('#')[1];
+
+      // 2. find that node from the document
+      const scrollEndElem = document.getElementById(scrollElemId);
+
+      // 3. and well animate to that node..
+      const anim = requestAnimationFrame((timestamp) => {
+        const stamp = timestamp || new Date().getTime();
+        const duration = 1200;
+        const start = stamp;
+
+        const startScrollOffset = window.pageYOffset;
+        const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
+
+        scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+      })
+    })
+  }
+  // Lets ignore it for the moment.
+  const easeInCubic = function (t) { return t*t*t }
+
+  const scrollToElem = (startTime, currentTime, duration, scrollEndElemTop, startScrollOffset) => {
+    const runtime = currentTime - startTime;
+    let progress = runtime / duration;
+
+    progress = Math.min(progress, 1);
+
+    const ease = easeInCubic(progress);
+
+    window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
+    if(runtime < duration){
+      requestAnimationFrame((timestamp) => {
+        const currentTime = timestamp || new Date().getTime();
+        scrollToElem(startTime, currentTime, duration, scrollEndElemTop, startScrollOffset);
+      })
+    }
+  }
+
 </script>
