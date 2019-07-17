@@ -156,13 +156,13 @@
     font-size: 1.25rem;
     /*letter-spacing: 1px;*/
 
-    padding-bottom: 20px;
+    padding: 0 20px 20px 20px;
   }
 
   .hero-image {
     position: relative;
     background-image: url('hero_bw2.jpg');
-    background-position: 30% 30%;
+    background-position: 30% 10%;
     height: calc(100vh - 131px - 71px - 100px);
     width: 100%;
     background-size: cover;
@@ -267,7 +267,6 @@
 
   function buttonIsClicked() {
     isImageBw = !isImageBw;
-    // console.log(document.getElementsByClassName('hero-image'));
     let element = document.getElementsByClassName('hero-image');
     if (isImageBw) {
       element[0].classList.remove("hero-image-swap");
