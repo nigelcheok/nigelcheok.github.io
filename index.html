@@ -159,7 +159,7 @@
 
   .hero-image {
     background-image: url('hero_bw2.jpg');
-    background-position: 20% 30%;
+    background-position: 10% 30%;
     height: calc(100vh - 131px - 71px - 200px);
     width: 100%;
     background-size: cover;
@@ -236,7 +236,6 @@
 
   function buttonIsClicked() {
     isImageBw = !isImageBw;
-    // console.log(document.getElementsByClassName('hero-image'));
     let element = document.getElementsByClassName('hero-image');
     if (isImageBw) {
       element[0].classList.remove("hero-image-swap");
