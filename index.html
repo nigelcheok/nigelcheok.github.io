@@ -283,19 +283,8 @@
   }
 
 function scrollToAbout() {
-//   // Scroll certain amounts from current position 
-//   window.scrollBy({ 
-//     top: -200, // could be negative value
-//     left: 0, 
-//     behavior: 'smooth' 
-//   });
-
-//   // Scroll to a certain element
-//   document.querySelector('#about-me').scrollIntoView({ 
-//     behavior: 'smooth' 
-//   });
   var element = document.getElementById('about-me');
-  var headerOffset = 100;
+  var headerOffset = 200;
   var elementPosition = element.getBoundingClientRect().top;
   var offsetPosition = elementPosition - headerOffset;
 
