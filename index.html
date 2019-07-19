@@ -52,7 +52,7 @@
       <div class="section-description">
         Projects that I've worked on —
       </div>
-      <div class="section-description" style="display: flex; justify-content: center; flex-wrap: wrap; align-content: flex-start; flex-flow: row wrap;">
+      <div class="section-description" id="my-projects">
         <div class="project">
           <div style="display: flex; justify-content: space-between">
             <div class="project-icon">
@@ -176,6 +176,9 @@
             </div>
           </div>
         </div>
+
+        <div class="project" style="visibility: hidden"></div>
+        <div class="project" style="visibility: hidden"></div>
       </div>
     </div>
     <div class="section-divider-small"></div>
@@ -356,12 +359,22 @@
     /*color: #424242;*/
   /*}*/
 
+  #my-projects {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: flex-start;
+    flex-flow: row wrap;
+  }
+
   .project {
-    border: 1px solid #e0e0e0;
+    border: 0px solid #e0e0e0;
     width: 600px;
     border-radius: 4px;
     background-color: #ffffff;
     margin: 20px;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12) !important;
   }
 
   .project-section-divider-small {
@@ -375,7 +388,7 @@
     width: 60px;
     /*background-color: #ff9800;*/
     background-color: #757575;
-    border-radius: 40px;
+    border-radius: 30px;
     transform: translate(30px, 30px);
   }
 
@@ -473,7 +486,6 @@ function scrollToAbout() {
        top: offsetPosition,
        behavior: "smooth"
   });
-
 }
 
 </script>
