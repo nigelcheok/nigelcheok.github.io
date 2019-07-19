@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
     <link rel="icon" type="image/png" href="icons8-happy-100.png">
     <title>My Webpage - Nigel Cheok</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,600|Source+Sans+Pro:200,300,400,600&display=swap" rel="stylesheet">
@@ -177,35 +176,6 @@
             </div>
           </div>
         </div>
-
-        <!--<div class="project" aria-hidden="true">-->
-          <!--<div style="display: flex; justify-content: space-between">-->
-            <!--<div class="project-icon">-->
-              <!--<div style="font-size: 28px; color: #ffffff; margin-top: 12px;">-->
-                <!--<div class="fas fa-id-card"></div>-->
-              <!--</div>-->
-            <!--</div>-->
-            <!--<div style="padding: 30px 30px 0 0; font-size: 0.7em; color: #bdbdbd;">-->
-              <!--Company-->
-            <!--</div>-->
-          <!--</div>-->
-          <!--<div class="project-section-divider-small"></div>-->
-          <!--<div class="project-details">-->
-            <!--<div class="project-type">-->
-              <!--Project Type-->
-            <!--</div>-->
-            <!--<div class="project-title">-->
-              <!--Project Title-->
-            <!--</div>-->
-            <!--<div class="project-description">-->
-              <!--Project Description-->
-            <!--</div>-->
-            <!--<div class="project-hashtag">-->
-              <!--# Hashtags-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-
       </div>
     </div>
     <!--<div class="section-divider-small"></div>-->
@@ -386,12 +356,6 @@
     /*color: #424242;*/
   /*}*/
 
-  /*@media only screen and (min-width: 824px) {*/
-    /*.hero-light-icon{*/
-      /*display: none;*/
-    /*}*/
-  /*}*/
-
   .project {
     border: 1px solid #e0e0e0;
     width: 600px;
@@ -500,10 +464,10 @@
   }
 
 function scrollToAbout() {
-  var element = document.getElementById('about-me');
-  var headerOffset = 160;
-  var elementPosition = element.getBoundingClientRect().top;
-  var offsetPosition = elementPosition - headerOffset;
+  const element = document.getElementById('about-me');
+  const headerOffset = 160;
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition - headerOffset;
 
   window.scrollTo({
        top: offsetPosition,
