@@ -34,8 +34,8 @@
       </div>
     </div>
     <div class="section-divider-small"></div>
-    <div class="section">
-      <div class="section-header" id="about-me">About Me</div>
+    <div class="section" id="about-me" style="padding-top: 240px; margin-top: -160px;">
+      <div class="section-header">About Me</div>
       <div class="section-description">
         I love design and enjoy building websites that are aesthetically pleasing, functional and purposeful.
       </div>
@@ -492,15 +492,22 @@
   }
 
 function scrollToAbout() {
-  const element = document.getElementById('about-me');
-  const headerOffset = 160;
-  const elementPosition = element.getBoundingClientRect().top;
-  const offsetPosition = elementPosition - headerOffset;
+  // const element = document.getElementById('about-me');
+  // const headerOffset = 160;
+  // const elementPosition = element.getBoundingClientRect().top;
+  // const offsetPosition = elementPosition - headerOffset;
+  // console.log(offsetPosition);
+  //
+  // window.scrollTo({
+  //      top: offsetPosition,
+  //      behavior: "smooth"
+  // });
 
-  window.scrollTo({
-       top: offsetPosition,
-       behavior: "smooth"
+  const element = document.querySelector('#about-me');
+  element.scrollIntoView({
+    behavior: 'smooth'
   });
+  // element.scrollTop -= 160;
 }
 
 </script>
